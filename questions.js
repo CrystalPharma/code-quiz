@@ -9,12 +9,12 @@ const questions = [
         ]
     },
     {
-        question: 'What data type should be stored or be returned in a if statement ideally?',
+        question: 'Array can be used to store __?',
         answers: [
             { text: 'Integers', correct: false},
-            { text: 'Boolean', correct: true},
+            { text: 'Boolean', correct: false},
             { text: 'String', correct: false},
-            { text: 'Floats', correct: false},
+            { text: 'all of the above', correct: true},
         ]
     },
     {
