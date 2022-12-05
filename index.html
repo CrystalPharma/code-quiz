@@ -15,19 +15,26 @@
     <div class="timer">Time: <span id="time">0</span></div>
 
     <div class="wrapper">
-      <div id="start-screen" class="start">
+      <div id="start-screen" class="start" >
         <h1>Coding Quiz Challenge</h1>
         <p>
           Try to answer the following code-related questions within the time
           limit. Keep in mind that incorrect answers will penalize your
           score/time by ten seconds!
         </p>
-        <button id="start">Start Quiz</button>
+        <button id="start-button" class="start-button button">Start Quiz</button>
+        <button id="next-button" class="next-button button  hide">Next</button>
       </div>
 
-      <div id="questions" class="hide">
-        <h2 id="question-title"></h2>
-        <div id="choices" class="choices"></div>
+        <div id="questions" class="hide">
+         <!-- class="hide"> -->
+        <h2 id="question-title">Question</h2>
+        <div id="choices" class="choices">
+          <button class="button">Answer 1</button>
+          <button class="button">Answer 2</button>
+          <button class="button">Answer 3 </button>
+          <button class="button">Answer 4</button>
+        </div>
       </div>
 
       <div id="end-screen" class="hide">
