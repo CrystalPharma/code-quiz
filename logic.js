@@ -18,8 +18,6 @@ function startGame() {
     nextQuestion();
 }
 
-
-
 function nextQuestion() {
     revealQuestion(shuffledQuestion[currentQuestion]);
 
@@ -29,7 +27,7 @@ function revealQuestion(question) {
     questionElement.innerHTML = question.question;
     question.answers.forEach(answer => {
     const button = document.createElement('button');
-    button.innerText = answer.text;
+    button.innerText = answer.text
     button.classList.add('button')
     if (answer.correct) {
         button.dataset.correct = answer.correct;
@@ -40,6 +38,7 @@ function revealQuestion(question) {
 }
 
 function clearAnswerButton() {
+    setClassState(document.body)
     nextButton.classList.add('hide')
     while (answerButtonsElement.firstChild){
         answerButtonsElement.removeChild
@@ -54,6 +53,20 @@ setClassState(document.body, correct)
 Array.from(answerButtonsElement.children).forEach(button => {
 setClassState(button, button.dataset.correct)
 })
-if (shuffledQuestion.length > currentQuestion +1) {nextButton.classList.remove('hide')};
+if (shuffledQuestion.length > currentQuestion +1) {
+nextButton.classList.remove('hide')
+} else {
+    startButton.innerText='Restart'
+    startButton.classList.remove('hide')
+};
+}
+
+function setClassState(element, correct) {
+    setClassState(element)
+    if(correct){
+        element.classList.add('correct')
+    } else{
+        element.classList.add('wrong')
+    }
 }
 
