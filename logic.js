@@ -9,21 +9,19 @@ const answer2ButtonsElement = document.getElementById('answer2-button');
 const answer3ButtonsElement = document.getElementById('answer3-button');
 const answer4ButtonsElement = document.getElementById('answer4-button');
 const choicesNodelist = document.querySelectorAll('.answer-choice');
-const timeEl = document.querySelector("#time");
-const secondsLeft = 60;
-const end = document.getElementById('end-screen');
-let score = document.getElementById('highscores');
+var timeEl = document.querySelector("#time");
+var secondsLeft = 60;
 
-function setTime() {
-    var timerInterval = setInterval(function () {
-        secondsLeft--;
-        timeEl.innerText = secondsLeft + " seconds left";
-        if (secondsLeft === 0) {
-            clearInterval(timerInterval);
-            endGame();
-        }
-    }, 1000);
-}
+    function setTime() {
+        var timerInterval = setInterval(function () {
+            secondsLeft--;
+            timeEl.innerText = secondsLeft + " seconds left";
+            if (secondsLeft === 0) {
+                clearInterval(timerInterval);
+                endGame();
+            }
+        }, 1000);
+    } setTime();
 
 function startGame() {
     startButton.classList.add('hide');
@@ -36,7 +34,7 @@ function startGame() {
 }
 
 function endGame() {
-    score.classList.remove('hide');
+
 }
 
 function nextQuestion() {
