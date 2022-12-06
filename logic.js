@@ -1,5 +1,4 @@
 const startButton = document.getElementById('start-button');
-const nextButton = document.getElementById('next-button');
 const gameIntro = document.getElementById('start-screen');
 const questionContainer = document.getElementById('question-container');
 let shuffledQuestion = [];
@@ -15,7 +14,6 @@ const choicesNodelist = document.querySelectorAll('.answer-choice');
 function startGame() {
     startButton.classList.add('hide');
     gameIntro.classList.add('hide');
-    nextButton.classList.remove('hide');
     shuffledQuestion = [...questions.sort(() => Math.random() - 0.5)];
     currentQuestion = 0;
     questionContainer.classList.remove('hide');
@@ -50,7 +48,6 @@ function revealQuestion(question) {
 
 function clearAnswerButton() {
     setClassState(document.body)
-    nextButton.classList.add('hide')
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild
             (answerButtonsElement.firstChild)
@@ -69,13 +66,12 @@ function selectAnswer(e) {
         console.log('You clicked on the correct answer!!!')
     } else {
         // subtract some amount from your time variable or timer
-        
+
     }
     // Array.from(answerButtonsElement.children).forEach(button => {
     //     setClassState(button, button.dataset.correct)
     // })
     // if (shuffledQuestion.length > currentQuestion + 1) {
-    //     nextButton.classList.remove('hide')
     // } else {
     //     startButton.innerText = 'Restart'
     //     startButton.classList.remove('hide')
