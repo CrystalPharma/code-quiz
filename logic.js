@@ -87,7 +87,7 @@ function selectAnswer(e) {
 
     } else {
         // subtract some amount from your time variable or timer
-
+        secondsLeft-20000;
     }
     // Array.from(answerButtonsElement.children).forEach(button => {
     //     setClassState(button, button.dataset.correct)
