@@ -4,6 +4,7 @@ const questionContain = document.getElementById('question-container');
 startButton.addEventListener('click', startGame)
 let shuffledQuestion, currentQuestion;
 const questionElement = document.getElementById('question-title');
+const answerButtonsElement = document.getElementById('answer-button');
 
 function startGame() {
     startButton.classList.add('hide');
@@ -34,8 +35,12 @@ function revealQuestion(question) {
         button.dataset.correct = answer.correct
     }
     button.addEventListener('click', selectAnswer)
-    
+    answerButtonsElement.appendChild(button)
     })
+}
+
+function resetDefault() {
+    
 }
 
 function makeChoices() {
