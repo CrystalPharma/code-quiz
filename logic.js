@@ -9,7 +9,12 @@ const answer2ButtonsElement = document.getElementById('answer2-button');
 const answer3ButtonsElement = document.getElementById('answer3-button');
 const answer4ButtonsElement = document.getElementById('answer4-button');
 const choicesNodelist = document.querySelectorAll('.answer-choice');
+var timeEl= document.querySelector("#time");
+var secondsLeft = 60;
 
+function setTime() {
+    
+}
 
 function startGame() {
     startButton.classList.add('hide');
@@ -19,6 +24,8 @@ function startGame() {
     questionContainer.classList.remove('hide');
     nextQuestion();
 }
+
+
 
 function nextQuestion() {
     revealQuestion(shuffledQuestion[currentQuestion]);
@@ -64,6 +71,7 @@ function selectAnswer(e) {
     // setClassState(document.body, correct)
     if(clickedButton.classList.contains('correct-answer')) {
         console.log('You clicked on the correct answer!!!')
+        
     } else {
         // subtract some amount from your time variable or timer
 
