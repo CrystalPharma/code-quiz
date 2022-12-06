@@ -1,9 +1,9 @@
 const startButton = document.getElementById('start-button');
-const nextButton =document.getElementById('next-button');
+const nextButton = document.getElementById('next-button');
 const questionContain = document.getElementById('question-container');
 startButton.addEventListener('click', startGame)
 let shuffledQuestion, currentQuestion;
-const questionElement =document.getElementById ('question');
+const questionElement = document.getElementById('question-title');
 
 function startGame() {
     startButton.classList.add('hide');
@@ -25,7 +25,11 @@ function nextQuestion() {
 }
 
 function revealQuestion(question) {
-    questionElement.innerHTML= question.question;
+    questionElement.innerHTML = question.question;
+    question.answers.forEach(answer => {
+    const button = document.createElement('button');
+    button.innerText = answer.text;
+    })
 }
 
 function makeChoices() {
