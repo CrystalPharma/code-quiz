@@ -92,4 +92,4 @@ function setTimeInterval() {
 
 }
 
-startButton.addEventListener('click', startGame)
+startButton.addEventListener('click', startGame)// good practice to put addEventListener at end of js
