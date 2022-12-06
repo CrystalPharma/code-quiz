@@ -11,7 +11,8 @@ const answer4ButtonsElement = document.getElementById('answer4-button');
 const choicesNodelist = document.querySelectorAll('.answer-choice');
 var timeEl = document.querySelector("#time");
 var secondsLeft = 60;
-
+const end = document.getElementById('end-screen');
+let score = document.getElementById('highscores');
     function setTime() {
         var timerInterval = setInterval(function () {
             secondsLeft--;
@@ -21,7 +22,7 @@ var secondsLeft = 60;
                 endGame();
             }
         }, 1000);
-    } setTime();
+    } 
 
 function startGame() {
     startButton.classList.add('hide');
