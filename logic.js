@@ -13,7 +13,17 @@ var timeEl= document.querySelector("#time");
 var secondsLeft = 60;
 
 function setTime() {
-    
+    function setTime() {
+        var timerInterval = setInterval(function() {
+          secondsLeft--;
+          timeEl.innerText = secondsLeft + " seconds left";
+      
+          if(secondsLeft === 0) {
+            clearInterval(timerInterval);
+            endGame();
+          }
+        }, 1000);
+      }
 }
 
 function startGame() {
@@ -22,10 +32,13 @@ function startGame() {
     shuffledQuestion = [...questions.sort(() => Math.random() - 0.5)];
     currentQuestion = 0;
     questionContainer.classList.remove('hide');
+    setTime();
     nextQuestion();
 }
 
+function endGame() {
 
+}
 
 function nextQuestion() {
     revealQuestion(shuffledQuestion[currentQuestion]);
