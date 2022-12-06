@@ -21,7 +21,7 @@ var secondsLeft = 60;
                 endGame();
             }
         }, 1000);
-    } setTime();
+    } 
 
 function startGame() {
     startButton.classList.add('hide');
@@ -104,10 +104,6 @@ function setClassState(element, correct) {
     } else {
         element.classList.add('wrong')
     }
-}
-
-function setTimeInterval() {
-
 }
 
 startButton.addEventListener('click', startGame)// good practice to put addEventListener at end of js
