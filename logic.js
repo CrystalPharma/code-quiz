@@ -13,6 +13,7 @@ var timeEl = document.querySelector("#time");
 var secondsLeft = 60;
 const end = document.getElementById('end-screen');
 let score = document.getElementById('highscores');
+var userScore = 0;
     function setTime() {
         var timerInterval = setInterval(function () {
             secondsLeft--;
@@ -82,6 +83,7 @@ function selectAnswer(e) {
     // setClassState(document.body, correct)
     if (clickedButton.classList.contains('correct-answer')) {
         console.log('You clicked on the correct answer!!!')
+        userScore = score.innerHTML += 1;
 
     } else {
         // subtract some amount from your time variable or timer
