@@ -17,16 +17,17 @@ let score = document.getElementById('highscores');
 let scorevar = 0
 console.log('score: ', score)
 var userScore = 0;
-    function setTime() {
-        var timerInterval = setInterval(function () {
-            secondsLeft--;
-            timeEl.innerText = secondsLeft + " seconds left";
-            if (secondsLeft === 0) {
-                clearInterval(timerInterval);
-                endGame();
-            }
-        }, 1000);
-    } 
+
+function setTime() {
+    var timerInterval = setInterval(function () {
+        secondsLeft--;
+        timeEl.innerText = secondsLeft + " seconds left";
+        if (secondsLeft === 0) {
+            clearInterval(timerInterval);
+            endGame();
+        }
+    }, 1000);
+} 
 //
 function startGame() {
     startButton.classList.add('hide');
@@ -81,7 +82,7 @@ function clearAnswerButton() {
     }
 }
 
-function selectAnswer(e) {
+const selectAnswer = async (e) => {
     console.log('asnwer choice clicked');
     // console.log('e.target is', e.target);
     const { target: clickedButton } = e;
@@ -95,12 +96,17 @@ function selectAnswer(e) {
         console.log(scorevar);
         score = document.getElementById('highscores');
         console.log('score', score)
+        btn = document.getElementsByClassName('correct-answer')[0];
+        console.log(btn)
+        btn.classList.add('corr-ans');
 
     } else {
         // subtract some amount from your time variable or timer
+        clickedButton.classList.add('youwrong')
         secondsLeft-=20;
         scorevar -=1;
     }
+   
     // Array.from(answerButtonsElement.children).forEach(button => {
     //     setClassState(button, button.dataset.correct)
     // })
@@ -110,10 +116,14 @@ function selectAnswer(e) {
     //     startButton.classList.remove('hide')
     // };
 
-
-
-    // nextQuestion();
+    secondsLeft += 50;
+    await delay(5000);
+    btn.classList.remove('corr-ans');
+    clickedButton.classList.remove('youwrong')
+    nextQuestion();
 }
+
+const delay = ms => new Promise(res => setTimeout(res, ms));
 
 function setClassState(element, correct) {
     setClassState(element)

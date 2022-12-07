@@ -17,8 +17,12 @@ a:hover {
   color: #8570a5;
 }
 
-.correct-answer {
-  color: black;
+.corr-ans {
+  color: green;
+}
+
+.youwrong {
+  color: red;
 }
 
 button {
