@@ -14,7 +14,8 @@ var timeEl = document.querySelector("#time");
 var secondsLeft = 60;
 const end = document.getElementById('end-screen');
 let score = document.getElementById('highscores');
-console.log(score)
+let scorevar = 0
+console.log('score: ', score)
 var userScore = 0;
     function setTime() {
         var timerInterval = setInterval(function () {
@@ -57,6 +58,7 @@ function revealQuestion(question) {
         // const button = document.createElement('button');
         // button.innerText = answer.text
         // button.classList.add('button')
+        console.log('abccccc', answerObj, index)
         if (answerObj.correct) {
             // button.dataset.correct = answer.correct;
             btn.classList.add('correct-answer');
@@ -89,11 +91,15 @@ function selectAnswer(e) {
     // setClassState(document.body, correct)
     if (clickedButton.classList.contains('correct-answer')) {
         console.log('You clicked on the correct answer!!!')
-        // userScore = score += 1;
+        scorevar += 1;
+        console.log(scorevar);
+        score = document.getElementById('highscores');
+        console.log('score', score)
 
     } else {
         // subtract some amount from your time variable or timer
-        secondsLeft-20000;
+        secondsLeft-=20;
+        scorevar -=1;
     }
     // Array.from(answerButtonsElement.children).forEach(button => {
     //     setClassState(button, button.dataset.correct)
@@ -103,7 +109,10 @@ function selectAnswer(e) {
     //     startButton.innerText = 'Restart'
     //     startButton.classList.remove('hide')
     // };
-    nextQuestion();
+
+
+
+    // nextQuestion();
 }
 
 function setClassState(element, correct) {
