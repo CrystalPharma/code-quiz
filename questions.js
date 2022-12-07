@@ -27,7 +27,7 @@ const questions = [
         ]
     },
     {
-        question: 'What is the correct syntax for changing the following HTML element? <p id = demo> demo </p>',
+        question: 'What is the correct syntax for changing the following HTML element? <code><p id = demo> demo </p></code>',
         answers: [
             { text: 'document.getElementbyTag' , correct: false },
             { text: 'demo.innerHTML', correct: false },

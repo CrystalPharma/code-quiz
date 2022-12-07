@@ -116,7 +116,7 @@ const selectAnswer = async (e) => {
     //     startButton.classList.remove('hide')
     // };
 
-    secondsLeft += 50;
+    secondsLeft += 5;
     await delay(5000);
     btn.classList.remove('corr-ans');
     clickedButton.classList.remove('youwrong')
