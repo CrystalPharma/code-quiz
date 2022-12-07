@@ -9,10 +9,12 @@ const answer2ButtonsElement = document.getElementById('answer2-button');
 const answer3ButtonsElement = document.getElementById('answer3-button');
 const answer4ButtonsElement = document.getElementById('answer4-button');
 const choicesNodelist = document.querySelectorAll('.answer-choice');
+//time interval
 var timeEl = document.querySelector("#time");
 var secondsLeft = 60;
 const end = document.getElementById('end-screen');
 let score = document.getElementById('highscores');
+console.log(score)
 var userScore = 0;
     function setTime() {
         var timerInterval = setInterval(function () {
@@ -24,7 +26,7 @@ var userScore = 0;
             }
         }, 1000);
     } 
-
+//
 function startGame() {
     startButton.classList.add('hide');
     gameIntro.classList.add('hide');
@@ -58,6 +60,10 @@ function revealQuestion(question) {
         if (answerObj.correct) {
             // button.dataset.correct = answer.correct;
             btn.classList.add('correct-answer');
+            
+            
+        } else {
+
         }
         // button.addEventListener('click', selectAnswer)
         // answerButtonsElement.appendChild(button)
@@ -83,7 +89,7 @@ function selectAnswer(e) {
     // setClassState(document.body, correct)
     if (clickedButton.classList.contains('correct-answer')) {
         console.log('You clicked on the correct answer!!!')
-        userScore = score.innerHTML += 1;
+        // userScore = score += 1;
 
     } else {
         // subtract some amount from your time variable or timer
