@@ -66,7 +66,7 @@ function revealQuestion(question) {
 
 
         } else {
-            
+
         }
         // button.addEventListener('click', selectAnswer)
         // answerButtonsElement.appendChild(button)
@@ -109,20 +109,11 @@ const selectAnswer = async (e) => {
         feedbackEl.textContent = 'Incorrect';
         feedbackEl.classList.remove('hide');
     }
-
-    // Array.from(answerButtonsElement.children).forEach(button => {
-    //     setClassState(button, button.dataset.correct)
-    // })
-    // if (shuffledQuestion.length > currentQuestion + 1) {
-    // } else {
-    //     startButton.innerText = 'Restart'
-    //     startButton.classList.remove('hide')
-    // };
-
-    secondsLeft += 5;
-    await delay(5000);
+    secondsLeft += 1;
+    await delay(1000);
     feedbackEl.classList.add('hide');
     nextQuestion();
+    
 }
 
 const delay = ms => new Promise(res => setTimeout(res, ms));
