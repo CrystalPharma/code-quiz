@@ -9,6 +9,8 @@ const answer2ButtonsElement = document.getElementById('answer2-button');
 const answer3ButtonsElement = document.getElementById('answer3-button');
 const answer4ButtonsElement = document.getElementById('answer4-button');
 const choicesNodelist = document.querySelectorAll('.answer-choice');
+const feedbackEl = document.querySelector('#feedback');
+
 //time interval
 var timeEl = document.querySelector("#time");
 var secondsLeft = 60;
@@ -27,7 +29,7 @@ function setTime() {
             endGame();
         }
     }, 1000);
-} 
+}
 //
 function startGame() {
     startButton.classList.add('hide');
@@ -56,17 +58,15 @@ function revealQuestion(question) {
         let btn = choicesNodelist[index];
         btn.innerText = answerObj.text;
         btn.addEventListener('click', selectAnswer)
-        // const button = document.createElement('button');
-        // button.innerText = answer.text
-        // button.classList.add('button')
-        console.log('abccccc', answerObj, index)
+        console.log(answerObj, index)
         if (answerObj.correct) {
             // button.dataset.correct = answer.correct;
             btn.classList.add('correct-answer');
-            
-            
-        } else {
 
+
+
+        } else {
+            
         }
         // button.addEventListener('click', selectAnswer)
         // answerButtonsElement.appendChild(button)
@@ -94,19 +94,23 @@ const selectAnswer = async (e) => {
         console.log('You clicked on the correct answer!!!')
         scorevar += 1;
         console.log(scorevar);
+        feedbackEl.textContent = 'Correct';
+        feedbackEl.classList.remove('hide');
         score = document.getElementById('highscores');
         console.log('score', score)
         btn = document.getElementsByClassName('correct-answer')[0];
         console.log(btn)
-        btn.classList.add('corr-ans');
+
 
     } else {
         // subtract some amount from your time variable or timer
         clickedButton.classList.add('youwrong')
-        secondsLeft-=20;
-        scorevar -=1;
+        secondsLeft -= 20;
+        scorevar -= 1;
+        feedbackEl.textContent = 'Incorrect';
+        feedbackEl.classList.remove('hide');
     }
-   
+
     // Array.from(answerButtonsElement.children).forEach(button => {
     //     setClassState(button, button.dataset.correct)
     // })

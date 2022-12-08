@@ -46,6 +46,10 @@ button:hover {
   display: block;
 }
 
+.disabled {
+  pointer-events: none;
+}
+
 input[type="text"] {
   font-size: 100%;
 }
