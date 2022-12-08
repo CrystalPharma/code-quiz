@@ -122,8 +122,7 @@ const selectAnswer = async (e) => {
 
     secondsLeft += 5;
     await delay(5000);
-    btn.classList.remove('corr-ans');
-    clickedButton.classList.remove('youwrong')
+    feedbackEl.classList.add('hide');
     nextQuestion();
 }
 
