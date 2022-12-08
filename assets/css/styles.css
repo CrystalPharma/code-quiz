@@ -17,13 +17,13 @@ a:hover {
   color: #8570a5;
 }
 
-.corr-ans {
+/* .corr-ans {
   color: green;
 }
 
 .youwrong {
   color: red;
-}
+} */
 
 button {
   display: inline-block;

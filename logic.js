@@ -60,12 +60,16 @@ function revealQuestion(question) {
         btn.addEventListener('click', selectAnswer)
         console.log(answerObj, index)
         if (answerObj.correct) {
+            // button.dataset.correct = answer.correct;
+            btn.classList.add('correct-answer');
 
 
 
         } else {
             
         }
+        // button.addEventListener('click', selectAnswer)
+        // answerButtonsElement.appendChild(button)
     })
 
 }
@@ -100,12 +104,20 @@ const selectAnswer = async (e) => {
 
     } else {
         // subtract some amount from your time variable or timer
-        clickedButton.classList.add('youwrong')
         secondsLeft -= 20;
         scorevar -= 1;
         feedbackEl.textContent = 'Incorrect';
         feedbackEl.classList.remove('hide');
     }
+
+    // Array.from(answerButtonsElement.children).forEach(button => {
+    //     setClassState(button, button.dataset.correct)
+    // })
+    // if (shuffledQuestion.length > currentQuestion + 1) {
+    // } else {
+    //     startButton.innerText = 'Restart'
+    //     startButton.classList.remove('hide')
+    // };
 
     secondsLeft += 5;
     await delay(5000);
